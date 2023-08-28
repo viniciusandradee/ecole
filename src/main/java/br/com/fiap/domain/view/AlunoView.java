@@ -35,9 +35,9 @@ public class AlunoView implements View<Aluno, Long> {
 
         String nome = null;
 
-        do{
+        do {
             nome = JOptionPane.showInputDialog("Nome do Aluno", Objects.nonNull(aluno) && Objects.nonNull(aluno.getNome()) ? aluno.getNome() : "");
-        }while(Objects.isNull(nome) || nome.trim().isEmpty());
+        } while (!service.valido(nome));
 
         String email = null;
 
