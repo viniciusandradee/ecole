@@ -1,5 +1,6 @@
 package br.com.fiap.domain.entity;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -14,15 +15,15 @@ public class Turma {
 
     private Set<Aluno> alunos = new LinkedHashSet<>();
 
-    private LocalDateTime inicio;
+    private LocalDate inicio;
 
-    private LocalDateTime encerramento;
+    private LocalDate encerramento;
 
 
     public Turma() {
     }
 
-    public Turma(Long id, Curso curso, Instrutor instrutor, Set<Aluno> alunos, LocalDateTime inicio, LocalDateTime encerramento) {
+    public Turma(Long id, Curso curso, Instrutor instrutor, Set<Aluno> alunos, LocalDate inicio, LocalDate encerramento) {
         this.id = id;
         this.curso = curso;
         this.instrutor = instrutor;
@@ -67,20 +68,20 @@ public class Turma {
         return this;
     }
 
-    public LocalDateTime getInicio() {
+    public LocalDate getInicio() {
         return inicio;
     }
 
-    public Turma setInicio(LocalDateTime inicio) {
+    public Turma setInicio(LocalDate inicio) {
         this.inicio = inicio;
         return this;
     }
 
-    public LocalDateTime getEncerramento() {
+    public LocalDate getEncerramento() {
         return encerramento;
     }
 
-    public Turma setEncerramento(LocalDateTime encerramento) {
+    public Turma setEncerramento(LocalDate encerramento) {
         this.encerramento = encerramento;
         return this;
     }

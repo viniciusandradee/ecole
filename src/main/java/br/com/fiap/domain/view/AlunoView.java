@@ -24,8 +24,13 @@ public class AlunoView implements View<Aluno, Long> {
 
     @Override
     public List<Aluno> findByName(String texto) {
-        String nome = JOptionPane.showInputDialog("Nome do Aluno", Objects.nonNull(texto) ? texto : "");
-        return service.findByName(nome);
+        String nome = service.valido( texto ) ? texto : JOptionPane.showInputDialog( "Nome do Aluno" );
+
+        while (!service.valido( nome )) {
+            nome = JOptionPane.showInputDialog( "Nome do Aluno" );
+        }
+
+        return service.findByName( nome );
     }
 
     @Override

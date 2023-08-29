@@ -50,86 +50,86 @@ public class MenuView {
                                         
                     """;
 
-            opcao = Short.parseShort(JOptionPane.showInputDialog(mensagem));
+            opcao = Short.parseShort( JOptionPane.showInputDialog( mensagem ) );
 
 
             switch (opcao) {
                 //Opções para alunos
                 case 1 -> {
-                    Aluno aluno = alunoView.persist(null);
-                    System.out.println(aluno);
+                    Aluno aluno = alunoView.persist( null );
+                    System.out.println( aluno );
                 }
                 case 10 -> {
-                    alunoView.findAll().forEach(System.out::println);
+                    alunoView.findAll().forEach( System.out::println );
                 }
                 case 11 -> {
-                    Aluno aluno = alunoView.findById(null);
-                    System.out.println(aluno);
+                    Aluno aluno = alunoView.findById( null );
+                    System.out.println( aluno );
                 }
                 case 12 -> {
-                    alunoView.findByName(null).forEach(System.out::println);
+                    alunoView.findByName( null ).forEach( System.out::println );
                 }
 
                 //Opções para Professor
                 case 2 -> {
-                    Instrutor instrutor = instrutorView.persist(null);
-                    System.out.println(instrutor);
+                    Instrutor instrutor = instrutorView.persist( null );
+                    System.out.println( instrutor );
                 }
 
                 case 20 -> {
-                    instrutorView.findAll().forEach(System.out::println);
+                    instrutorView.findAll().forEach( System.out::println );
                 }
 
                 case 21 -> {
-                    Instrutor instrutor = instrutorView.findById(null);
-                    System.out.println(instrutor);
+                    Instrutor instrutor = instrutorView.findById( null );
+                    System.out.println( instrutor );
                 }
 
                 case 22 -> {
-                    instrutorView.findByName(null).forEach(System.out::println);
+                    instrutorView.findByName( null ).forEach( System.out::println );
                 }
 
                 //Opções para Cursos
                 case 3 -> {
-                    Curso curso = cursoView.persist(null);
-                    System.out.println(curso);
+                    Curso curso = cursoView.persist( null );
+                    System.out.println( curso );
                 }
 
                 case 30 -> {
-                    cursoView.findAll().forEach(System.out::println);
+                    cursoView.findAll().forEach( System.out::println );
                 }
 
                 case 31 -> {
-                    Curso curso = cursoView.findById(null);
-                    System.out.println(curso);
+                    Curso curso = cursoView.findById( null );
+                    System.out.println( curso );
                 }
 
                 case 32 -> {
-                    cursoView.findByName(null).forEach(System.out::println);
+                    cursoView.findByName( null ).forEach( System.out::println );
                 }
 
                 //Opções para matrícula
                 case 4 -> {
-                    Turma turma = turmaView.persist(null);
-                    System.out.println(turma);
+                    Turma turma = turmaView.persist( null );
+                    System.out.println( turma );
                 }
 
                 case 40 -> {
-                    turmaView.findAll().forEach(System.out::println);
+                    turmaView.findAll().forEach( System.out::println );
                 }
 
                 case 41 -> {
-                    Turma turma = turmaView.findById(null);
-                    System.out.println(turma);
+                    Turma turma = turmaView.findById( null );
+                    System.out.println( turma );
                 }
 
                 case 42 -> { //Buscando pelo nome do professor da Turma
-                    turmaView.findByName(null).forEach(System.out::println);
+                    turmaView.findByName( null ).forEach( System.out::println );
                 }
 
                 //Deseja Realmente sair?
                 case 0 -> {
-                    var sair = JOptionPane.showConfirmDialog(null, "Deseja Realmente Sair do Sistema?", "Sair?", JOptionPane.YES_NO_OPTION);
+                    var sair = JOptionPane.showConfirmDialog( null, "Deseja Realmente Sair do Sistema?", "Sair?", JOptionPane.YES_NO_OPTION );
                     if (sair == 1) opcao = 99;
                 }
 
