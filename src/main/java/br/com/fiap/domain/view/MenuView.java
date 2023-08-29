@@ -51,7 +51,11 @@ public class MenuView {
                                         
                     """;
 
-            opcao = Short.parseShort( JOptionPane.showInputDialog( mensagem ) );
+            try {
+                opcao = Short.parseShort( JOptionPane.showInputDialog( mensagem ) );
+            } catch (Exception e) {
+                System.exit( 0 );
+            }
 
 
             switch (opcao) {
@@ -130,7 +134,7 @@ public class MenuView {
 
                 case 5 -> {
                     Turma matricula = turmaView.matricular( null );
-                    System.out.println(matricula);
+                    System.out.println( matricula );
                 }
 
                 //Deseja Realmente sair?
