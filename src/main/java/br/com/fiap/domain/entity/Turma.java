@@ -1,8 +1,9 @@
 package br.com.fiap.domain.entity;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.LinkedHashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class Turma {
@@ -27,7 +28,7 @@ public class Turma {
         this.id = id;
         this.curso = curso;
         this.instrutor = instrutor;
-        this.alunos = alunos;
+        this.alunos = Objects.nonNull( alunos ) ? alunos : new LinkedHashSet<>();
         this.inicio = inicio;
         this.encerramento = encerramento;
     }
@@ -38,6 +39,7 @@ public class Turma {
 
     public Turma setId(Long id) {
         this.id = id;
+
         return this;
     }
 
@@ -60,13 +62,21 @@ public class Turma {
     }
 
     public Set<Aluno> getAlunos() {
-        return alunos;
+        return Collections.unmodifiableSet( alunos );
     }
 
-    public Turma setAlunos(Set<Aluno> alunos) {
-        this.alunos = alunos;
+
+    public Turma addAluno(Aluno a) {
+        alunos.add( a );
         return this;
     }
+
+
+    public Turma removeAluno(Aluno a) {
+        alunos.remove( a );
+        return this;
+    }
+
 
     public LocalDate getInicio() {
         return inicio;
@@ -88,13 +98,6 @@ public class Turma {
 
     @Override
     public String toString() {
-        return "Turma{" +
-                "id=" + id +
-                ", curso=" + curso +
-                ", instrutor=" + instrutor +
-                ", alunos=" + alunos +
-                ", inicio=" + inicio +
-                ", encerramento=" + encerramento +
-                '}';
+        return id + " - " + curso.getNome() + " - Prof (a)." + instrutor.getNome();
     }
 }

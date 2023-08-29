@@ -108,9 +108,17 @@ atividade.
 
 <a id="_Diagrama_de_Classes"></a>
 
-# Diagrama de Classes
+# Diagrama de Classes de Entidade
 
-<img src="documentacao/diagrama.png">
+<img src="documentacao/diagramas/UML/entity.png">
+
+# Diagrama de Classes de Serviço
+
+<img src="documentacao/diagramas/UML/service.png">
+
+# Diagrama de Classes de Visualização
+
+<img src="documentacao/diagramas/UML/view.png">
 
 
 <a id="_Entrega"></a>

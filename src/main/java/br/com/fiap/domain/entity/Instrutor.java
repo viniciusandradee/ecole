@@ -35,9 +35,6 @@ public class Instrutor {
 
     @Override
     public String toString() {
-        return "Instrutor{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                '}';
+        return id + " - " + nome;
     }
 }

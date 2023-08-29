@@ -45,6 +45,7 @@ public class MenuView {
                         41 - Consulta Matricula pelo id
                         42 - Consulta Matricula pelo nome do Professor 
                         
+                    5 - Realizar Matricula
                                            
                     0 - Sair do Programa
                                         
@@ -125,6 +126,11 @@ public class MenuView {
 
                 case 42 -> { //Buscando pelo nome do professor da Turma
                     turmaView.findByName( null ).forEach( System.out::println );
+                }
+
+                case 5 -> {
+                    Turma matricula = turmaView.matricular( null );
+                    System.out.println(matricula);
                 }
 
                 //Deseja Realmente sair?

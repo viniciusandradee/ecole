@@ -44,15 +44,7 @@ public class AlunoService implements Service<Aluno, Long> {
      * @param emailAddress
      * @return
      */
-    public boolean validarEmail(String emailAddress) {
-        //Expressão Regular. Para saber mais:
-        //Dica de leitura: Expressões Regulares: Uma Abordagem Divertida
-        //ISBN 13: 978-8575224748
-        var regexPattern = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
-        return Pattern.compile(regexPattern)
-                .matcher(emailAddress)
-                .matches();
-    }
+
 
     /**
      * Gerando matricula randomicamente
