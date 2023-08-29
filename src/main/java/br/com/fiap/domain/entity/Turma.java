@@ -96,6 +96,23 @@ public class Turma {
         return this;
     }
 
+
+    public String toString(Boolean all) {
+
+        if (all)
+            return "Turma{" +
+                    "id=" + id +
+                    ", curso=" + curso +
+                    ", instrutor=" + instrutor +
+                    ", alunos=" + alunos +
+                    ", inicio=" + inicio +
+                    ", encerramento=" + encerramento +
+                    '}';
+
+        return toString();
+
+    }
+
     @Override
     public String toString() {
         return id + " - " + curso.getNome() + " - Prof (a)." + instrutor.getNome();
