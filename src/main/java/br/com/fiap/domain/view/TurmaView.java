@@ -53,15 +53,23 @@ public class TurmaView extends Component implements View<Turma, Long> {
         CursoService cursoService = new CursoService();
         InstrutorService instrutorService = new InstrutorService();
 
-
         var cursos = cursoService.findAll();
+
+        if(Objects.isNull( cursos ) || cursos.size() == 0) {
+            JOptionPane.showMessageDialog(null, "Não temos cursos cadastrados. Primeiramente cadastre um curso" );
+            return null;
+        }
 
         curso = (Curso) JOptionPane.showInputDialog( null, "Selecione o Curso", "Curso", JOptionPane.QUESTION_MESSAGE, null, cursos.toArray(), Objects.nonNull( cursos ) && cursos.size() > 0 ? cursos.get( 0 ) : null );
 
         var instrutores = instrutorService.findAll();
 
-        instrutor = (Instrutor) JOptionPane.showInputDialog( null, "Selecione o Professor", "Professor", JOptionPane.QUESTION_MESSAGE, null, instrutores.toArray(), Objects.nonNull( instrutores ) && instrutores.size() > 0 ? instrutores.get( 0 ) : null );
+        if(Objects.isNull( instrutores ) || instrutores.size() == 0) {
+            JOptionPane.showMessageDialog(null, "Não temos instrutores cadastrados. Primeiramente cadastre um instrutor" );
+            return null;
+        }
 
+        instrutor = (Instrutor) JOptionPane.showInputDialog( null, "Selecione o Professor", "Professor", JOptionPane.QUESTION_MESSAGE, null, instrutores.toArray(), Objects.nonNull( instrutores ) && instrutores.size() > 0 ? instrutores.get( 0 ) : null );
 
         LocalDate inicio = null;
         LocalDate fim = null;
@@ -92,6 +100,12 @@ public class TurmaView extends Component implements View<Turma, Long> {
 
     public Turma matricular(Aluno aluno) {
         var turmas = service.findAll();
+
+        if(Objects.isNull( turmas ) || turmas.size() == 0) {
+            JOptionPane.showMessageDialog(null, "Não temos turmas cadastradas. Primeiramente cadastre uma turma" );
+            return null;
+        }
+
         Turma turma = (Turma) JOptionPane.showInputDialog( null, "Selecione a Turma", "Turmas", JOptionPane.QUESTION_MESSAGE, null, turmas.toArray(), Objects.nonNull( turmas ) ? turmas.get( 0 ) : null );
 
         if (Objects.isNull( aluno ) || Objects.isNull( aluno.getId() )) {
