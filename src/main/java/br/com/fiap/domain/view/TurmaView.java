@@ -99,6 +99,7 @@ public class TurmaView extends Component implements View<Turma, Long> {
 
 
     public Turma matricular(Aluno aluno) {
+
         var turmas = service.findAll();
 
         if(Objects.isNull( turmas ) || turmas.size() == 0) {
