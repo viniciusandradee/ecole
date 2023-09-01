@@ -36,10 +36,10 @@ public class TurmaView extends Component implements View<Turma, Long> {
 
     @Override
     public List<Turma> findByName(String texto) {
-        String nome = service.valido( texto ) ? texto : JOptionPane.showInputDialog( "Nome do Curso" );
+        String nome = service.valido( texto ) ? texto : JOptionPane.showInputDialog( "Nome do CURSO" );
 
         while (!service.valido( nome )) {
-            nome = JOptionPane.showInputDialog( "Nome do Curso" );
+            nome = JOptionPane.showInputDialog( "Nome do CURSO" );
         }
 
         return service.findByName( nome );
