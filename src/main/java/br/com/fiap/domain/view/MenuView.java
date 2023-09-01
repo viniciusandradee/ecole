@@ -43,7 +43,7 @@ public class MenuView {
                     4 - Abrir nova Turma
                         40 - Listagem de Turmas
                         41 - Consulta Turma pelo id
-                        42 - Consulta Turma pelo nome do Professor 
+                        42 - Consulta Turma pelo nome do Curso 
                         
                     5 - Realizar Matricula
                                            
